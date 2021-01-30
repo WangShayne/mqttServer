@@ -1,0 +1,58 @@
+查询版本信息	{app}/get/request/database/version
+查询版本信息返回	database/get/response/{app}/version
+
+模型名称查询	{app}/get/request/database/modelschema
+模型名称查询返回	database/get/response/{app}/modelschema
+
+模型删除	{app}/action/request/database/deletemodel
+模型删除返回	database/action/response/{app}/deletemodel
+
+模型内容查询	{app}/get/request/database/model
+模型内容查询返回	database/get/response/{app}/model
+
+模型设置	{app}/set/request/database/model
+模型设置返回	database/set/response/{app}/model
+
+设备GUID查询	app}/get/request/database/guid
+设备GUID查询返回	database/get/response/{app}/guid
+
+设备查询	{app}/get/request/database/register
+设备查询返回	database/get/response/{app}/register
+
+设备注册	{app}/set/request/database/register
+设备注册返回	database/set/response/{app}/register
+
+定值查询	{app}/get/request/database/parameter
+定值查询返回	database/get/response/{app}/parameter
+
+定值设置	{app}/set/request/database/parameter
+定值设置返回	database/set/response/{app}/parameter
+
+定值删除	{app}/action/request/database/deleteparameter
+定值删除返回	database/action/response/{app}/deleteparameter
+
+数据主动上报	{app}/notify/event/database/{设备类型}/{设备标识}
+数据主动上报返回	database/notify/response/{app}/{设备类型}/{设备标识}
+数据变化上报	{app}/notify/spont/*/{设备类型}/{设备标识}
+应用订阅接口	{app}/get/request/database/subscribe
+应用订阅接口返回	database/get/response/{app}/subscribe
+实时数据查询	{app}/get/request/database/realtime
+实时数据查询返回	database/get/response/{app}/realtime
+写事件接口	{app}/set/request/database/SOE
+写事件返回	database/set/response/{app}/SOE
+读事件接口	{app}/get/request/database/SOE
+读事件返回	database/get/response/{app}/SOE
+设备关系查询接口	{app}/get/request/database/vT
+设备关系查询返回	database/get/response/{app}/vT
+查询数据信息	{app}/get/request/database/info
+查询数据信息返回	database/ get /response/{app}/ info
+历史数据查询	{app}/get/request/database/history
+历史数据查询返回	database/get/response/{app}/history
+模型子集设置	{app}/set/request/database/childmodel
+模型子集返回	database/set/response/{app}/childmodel
+模型子集删除	{app}/action/request/database/childmodel
+模型子集删除返回	database/action/response/{app}/childmodel
+设置设备列表	{app}/set/request/database/devlist
+设置设备列表返回	database /set/response/{app}/devlist
+删除设备列表	{app}/action/request/database/deletedevlist
+删除设备列表返回	database/action/response/{app}/deletedevlist

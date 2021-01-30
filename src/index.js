@@ -1,25 +1,35 @@
+const config = require("../config.js")
 const aedes = require("aedes")();
 const server = require('net').createServer(aedes.handle)
-const port = 1883
+const port = config.port
+// const config = require("../config.json")
 
 
 server.listen(port, function () {
   console.log('server started and listening on port ', port);
-  aedes.publish({ topic: 'aedes/hello', payload: "I'm broker " + aedes.id })
 })
 
-aedes.subscribe('fromClient', function(packet, cb) {
-  console.log("收到消息")
-  console.log(packet.payload.toString())
+config.list.map(item => {
+  aedes.subscribe(item.request, function (packet, cb) {
 
-  aedes.publish({
-    cmd: 'publish',
-    qos: 2,
-    topic: 'fromServer',
-    payload: 'Thank you!',
-    retain: false
+    const requestPayload = JSON.parse(packet.payload)
+
+    const reponsePayload = Object.assign({}, {
+      token: requestPayload.token | "123",
+      timestamp: new Date().toISOString(),
+    },item.body)
+
+    aedes.publish({
+      cmd: 'publish',
+      qos: 2,
+      topic: item.response,
+      payload: JSON.stringify(reponsePayload),
+      retain: false
+    });
   });
-});
+})
+
+
 
 aedes.on('client', function (client) {
   console.log("客户端连接")

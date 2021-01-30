@@ -1,0 +1,13 @@
+[
+    {
+        "desc":"查询版本信息返回",
+        "request": "app/get/request/database/version",
+        "response": "database/get/response/app/version",
+        "respBody": "查询版本信息返回"
+    },
+    {
+        "request": "app/get/request/database/modelschema",
+        "response": "database/get/response/app/modelschema",
+        "responseBody": "模型名称查询返回"
+    }
+]
